@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+﻿window.addEventListener('DOMContentLoaded', function() {
 
     'use strict';
 
@@ -27,6 +27,10 @@ window.addEventListener('DOMContentLoaded', function() {
             let data = JSON.parse(request.response);
 
             inputUSD.value = inputRUB.value / data.usd;
+
+	    if(inputRUB.value == '') {
+            inputUSD.value = '';
+            } 
         } else {
             inputUSD.value = "Что-то пошло не так!";
         }
